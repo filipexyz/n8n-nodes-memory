@@ -1,6 +1,13 @@
 # n8n-nodes-memory
 
-Custom memory node for n8n AI Agent with external API support.
+Custom memory nodes for n8n AI Agent with workflow-based storage.
+
+## Two Nodes
+
+| Node | Use Case |
+|------|----------|
+| **Memory API** | External webhook/API as memory backend |
+| **Memory Workflow** | Sub-workflow within n8n as memory backend |
 
 ## The Power: Memory as Workflows
 
@@ -81,11 +88,21 @@ Message types: `human` or `ai`
 
 ## Parameters
 
+### Memory API
+
 | Parameter | Description |
 |-----------|-------------|
 | API URL | Your memory webhook URL |
 | Session ID | Unique conversation identifier |
 | API Key | Optional Bearer token |
+| Context Window Length | Messages to include (default: 10) |
+
+### Memory Workflow
+
+| Parameter | Description |
+|-----------|-------------|
+| Workflow ID | ID of the sub-workflow to execute |
+| Session ID | Unique conversation identifier |
 | Context Window Length | Messages to include (default: 10) |
 
 ## How It Works
