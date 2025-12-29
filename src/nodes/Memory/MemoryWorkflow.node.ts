@@ -119,13 +119,12 @@ export class MemoryWorkflow implements INodeType {
     outputNames: ['Memory'],
     properties: [
       {
-        displayName: 'Workflow ID',
+        displayName: 'Workflow',
         name: 'workflowId',
-        type: 'string',
+        type: 'workflowSelector',
         default: '',
         required: true,
-        description: 'ID of the workflow to execute for memory operations',
-        placeholder: 'abc123',
+        description: 'The workflow to execute for memory operations',
       },
       {
         displayName: 'Session ID',
@@ -149,7 +148,8 @@ export class MemoryWorkflow implements INodeType {
     this: ISupplyDataFunctions,
     itemIndex: number
   ): Promise<SupplyData> {
-    const workflowId = this.getNodeParameter('workflowId', itemIndex) as string;
+    const workflowIdParam = this.getNodeParameter('workflowId', itemIndex) as string | { value: string };
+    const workflowId = typeof workflowIdParam === 'string' ? workflowIdParam : workflowIdParam.value;
     const sessionId = this.getNodeParameter('sessionId', itemIndex) as string;
     const contextWindowLength = this.getNodeParameter('contextWindowLength', itemIndex, 10) as number;
 
