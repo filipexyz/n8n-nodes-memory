@@ -114,7 +114,7 @@ class ApiChatHistory extends BaseListChatMessageHistory {
   }
 }
 
-export class Memory implements INodeType {
+export class MemoryApi implements INodeType {
   description: INodeTypeDescription = {
     displayName: 'Memory API',
     name: 'memoryApi',

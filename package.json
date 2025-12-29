@@ -28,7 +28,7 @@
   "n8n": {
     "n8nNodesApiVersion": 1,
     "nodes": [
-      "dist/nodes/Memory/Memory.node.js",
+      "dist/nodes/Memory/MemoryApi.node.js",
       "dist/nodes/Memory/MemoryWorkflow.node.js"
     ],
     "credentials": []
