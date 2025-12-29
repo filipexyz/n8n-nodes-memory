@@ -1,0 +1,46 @@
+{
+  "name": "n8n-nodes-memory",
+  "version": "0.5.1",
+  "description": "Custom memory node for n8n AI Agent with external API support",
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "langchain",
+    "memory",
+    "ai"
+  ],
+  "license": "MIT",
+  "author": "Filipe Labs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/filipexyz/n8n-nodes-memory"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "nodes": [
+      "dist/nodes/Memory/Memory.node.js"
+    ],
+    "credentials": []
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.3",
+    "typescript": "^5.9.3"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "^2.2.1"
+  },
+  "dependencies": {
+    "@langchain/core": "^0.3.0",
+    "langchain": "^0.3.0"
+  }
+}
